@@ -1,7 +1,7 @@
 `环境`
 
 ```
- "cwd": "${workspaceFolder}/src/"
+ "cwd": "${workspaceFolder}"
 
 npm install typescript --save-dev
 npm install @solana/web3.js --save-dev
