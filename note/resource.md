@@ -11,7 +11,8 @@ https://www.ghotis.xyz/SolanaDocumention/clients/javascript.html
 
 https://solana-labs.github.io/solana-web3.js/classes/Keypair.html#fromSecretKey
 
-https://www.soldev.app/library
+course
+https://www.soldev.app/course
 
 rpc
 https://solana.com/docs/rpc/websocket/accountsubscribe
