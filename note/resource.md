@@ -29,9 +29,9 @@ test https://api.testnet.solana.com
 main https://api.mainnet-beta.solana.com/
 local http://127.0.0.1:8899
 
-设置路由
+Node Endpoints
 solana config set --url https://api.devnet.solana.com
-本地服务
+local servers
 solana-test-validator
 ```
 
@@ -45,4 +45,99 @@ npm install @solana/spl-token --save-dev
 
 npm install esrun --save-dev
 npm install typescript --save-dev
+```
+
+`js vs ts`
+
+```
+let message = "Hello, World!";
+
+function greet(person) {
+  return "Hello " + person.name;
+}
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  move(distance) {
+    console.log(`${this.name} moved ${distance}m.`);
+  }
+}
+
+const dog = new Animal("Dog");
+
+dog.move(10);
+
+const Direction = {
+  Up: 0,
+  Down: 1,
+  Left: 2,
+  Right: 3
+};
+
+const direction = Direction.Up;
+
+function add(a, b) {
+  return a + b;
+}
+
+function identity(arg) {
+  return arg;
+}
+
+let count = 10;
+
+------
+
+let message: string = "Hello, World!";
+
+interface Person {
+  name: string;
+}
+
+
+function greet(person: Person) {
+  return "Hello " + person.name;
+}
+
+class Animal {
+  private name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  move(distance: number) {
+    console.log(`${this.name} moved ${distance}m.`);
+  }
+}
+
+const dog = new Animal("Dog");
+
+dog.move(10);
+
+enum Direction {
+  Up,
+  Down,
+  Left,
+  Right
+}
+
+const direction: Direction = Direction.Up;
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let count: number = 10;  // TypeScript 会自动推断类型
+
+
+
+
 ```

@@ -4,13 +4,13 @@
       {
         "label": "Compile TypeScript",
         "type": "shell",
-        "command": "npx tsc main.ts && node main.js ",
+        "command": "npm start",
         "group": {
           "kind": "build",
           "isDefault": true
         },
         "options": {
-          "cwd": "${workspaceFolder}/src/"
+          "cwd": "${workspaceFolder}"
         }
   }]
     }

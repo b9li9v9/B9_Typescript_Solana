@@ -38,17 +38,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var web3 = require("@solana/web3.js");
 var helpers = require("@solana-developers/helpers");
+var token = require("@solana/spl-token");
 var path = require("path");
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var local_account, connection, local_account_publickey, local_account_info, local_account_balance, local_account_balanceInSol, transaction, other_account_publickey, sendSolInstruction, signature, other_account_balanceInSol;
+        var local_account, connection, local_account_publickey, local_account_info, local_account_balance, local_account_balanceInSol, transaction, other_account_publickey, sendSolInstruction, signature, other_account_balanceInSol, tokenMint, link;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, helpers.getKeypairFromFile(path.resolve(__dirname, "../keypair/id.json"))];
                 case 1:
                     local_account = _a.sent();
                     console.log("✅", local_account.publicKey.toBase58());
-                    connection = new web3.Connection("http://127.0.0.1:8899");
+                    connection = new web3.Connection("http://127.0.0.1:8899", "finalized");
                     console.log("\u2705 Connected! ");
                     local_account_publickey = local_account.publicKey;
                     return [4 /*yield*/, connection.getAccountInfo(local_account_publickey)];
@@ -74,6 +75,12 @@ function main() {
                 case 5:
                     other_account_balanceInSol = (_a.sent()) / web3.LAMPORTS_PER_SOL;
                     console.log("💰", other_account_balanceInSol);
+                    return [4 /*yield*/, token.createMint(connection, local_account, local_account_publickey, null, 2)];
+                case 6:
+                    tokenMint = _a.sent();
+                    link = helpers.getExplorerLink("address", tokenMint.toString(), "devnet");
+                    console.log("\u2705 Finished! Created token mint: ".concat(link));
+                    // ---
                     console.log("✅ program end");
                     return [2 /*return*/];
             }
