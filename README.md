@@ -24,5 +24,4 @@ local servers
 solana-test-validator
 ```
 
-web test
-vscode test
+web test 1
