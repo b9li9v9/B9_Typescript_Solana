@@ -25,3 +25,4 @@ solana-test-validator
 ```
 
 web test 1
+web test 2
